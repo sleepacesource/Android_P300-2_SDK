@@ -192,9 +192,9 @@ public class RealtimeDataFragment extends BaseFragment {
 			if(DemoApp.USER_ID > 0 && !TextUtils.isEmpty(MainActivity.deviceName) && !TextUtils.isEmpty(MainActivity.mac)) {
 				Object tag = v.getTag();
 				if (tag == null || "open".equals(tag)) {
-					getP300Helper().startRealTimeData(3000, realtimeCallback);
+					getP300Helper().startRealTimeData(3000, true, realtimeCallback);
 				} else {
-					getP300Helper().stopRealTimeData(3000, realtimeCallback);
+					getP300Helper().stopRealTimeData(realtimeCallback);
 				}
 			}else {
 				Toast.makeText(mActivity, R.string.tips_connect_device, Toast.LENGTH_SHORT).show();
